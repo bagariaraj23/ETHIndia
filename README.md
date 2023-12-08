@@ -1,174 +1,80 @@
-# [Material Tailwind Kit React](http://demos.creative-tim.com/material-tailwind-kit-react/#/?ref=readme-mtkr) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/material-tailwind-kit-react&text=Check%20Material%20Tailwind%20Kit%20React%20made%20by%20@CreativeTim%20#webdesign%20#kit%20#materialdesign%20#react%20#materialtailwind%20#tailwindcss%20https://www.creative-tim.com/product/material-tailwind-kit-react)
+# 🏗 Scaffold-ETH 2
 
-![version](https://img.shields.io/badge/version-2.1.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-tailwind-kit-react.svg)](https://github.com/creativetimofficial/material-tailwind-kit-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-tailwind-kit-react.svg)](https://github.com/creativetimofficial/material-tailwind-kit-react/issues?q=is%3Aissue+is%3Aclosed)
+<h4 align="center">
+  <a href="https://docs.scaffoldeth.io">Documentation</a> |
+  <a href="https://scaffoldeth.io">Website</a>
+</h4>
 
-![Image](https://s3.amazonaws.com/creativetim_bucket/products/486/original/material-tailwind-kit-react.jpg)
+🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
 
-Material Tailwind Kit React is our newest free Material Tailwind UI Kit based on Tailwind CSS and React. If you’re a developer looking to create an ui kit that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative Material Tailwind, Tailwind CSS & React ui kit comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
+⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, and Typescript.
 
-**Fully Coded Elements**
+- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
+- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
+- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
+- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
+- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
 
-Material Tailwind Kit React is built with over 40 frontend individual elements coming from @material-tailwind/react, like buttons, inputs, navbars, nav tabs, cards, or alerts, giving you the freedom of choosing and combining. All components can take variations in color, which you can easily modify using props and tailwind css classnames. You will save a lot of time going from prototyping to full-functional code because all elements are implemented.
+![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/1171422a-0ce4-4203-bcd4-d2d1941d198b)
 
-This free Material Tailwind, Tailwind CSS & React UI Kit is coming with prebuilt design blocks, so the development process is seamless, switching from our pages to the real website is very easy to be done.
+## Requirements
 
-View [all components here](https://www.material-tailwind.com/docs/react/button).
+Before you begin, you need to install the following tools:
 
-**Documentation built by Developers**
+- [Node (v18 LTS)](https://nodejs.org/en/download/)
+- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
+- [Git](https://git-scm.com/downloads)
 
-Each element is well presented in very complex documentation.
+## Quickstart
 
-You can read more about the [documentation here](https://www.material-tailwind.com/docs/react/installation).
+To get started with Scaffold-ETH 2, follow the steps below:
 
-**Example Pages**
+1. Clone this repo & install dependencies
 
-If you want to get inspiration or just show something directly to your clients, you can jump-start your development with our pre-built example pages. You will be able to quickly set up the basic structure for your web project.
+```
+git clone https://github.com/scaffold-eth/scaffold-eth-2.git
+cd scaffold-eth-2
+yarn install
+```
 
-View [example pages here](https://demos.creative-tim.com/material-tailwind-kit-react/#/home).
+2. Run a local network in the first terminal:
 
-**HELPFUL LINKS**
+```
+yarn chain
+```
 
-- View [Github Repository](https://github.com/creativetimofficial/material-tailwind-kit-react)
-- Check [FAQ Page](https://www.creative-tim.com/faq)
+This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.ts`.
 
-#### Special thanks
+3. On a second terminal, deploy the test contract:
 
-During the development of this ui kit, we have used many existing resources from awesome developers. We want to thank them for providing their tools open source:
+```
+yarn deploy
+```
 
-- [Material Tailwind](https://material-tailwind.com/) - Material Tailwind is an easy to use components library for Tailwind CSS and Material Design.
-- [Hero Icons](https://heroicons.com/) - Beautiful hand-crafted SVG icons.
-- [Nepcha Analytics](https://nepcha.com?ref=readme) for the analytics tool. Nepcha is already integrated with Material Tailwind Kit React. You can use it to gain insights into your sources of traffic.
+This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
 
-Let us know your thoughts below. And good luck with development!
+4. On a third terminal, start your NextJS app:
 
-## Table of Contents
+```
+yarn start
+```
 
-- [Versions](#versions)
-- [Demo](#demo)
-- [Quick Start](#quick-start)
-- [Documentation](#documentation)
-- [File Structure](#file-structure)
-- [Browser Support](#browser-support)
-- [Resources](#resources)
-- [Reporting Issues](#reporting-issues)
-- [Technical Support or Questions](#technical-support-or-questions)
-- [Licensing](#licensing)
-- [Useful Links](#useful-links)
+Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
 
-## Versions
+Run smart contract test with `yarn hardhat:test`
 
-[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-tailwind-kit-react?ref=readme-mtkr)
-
-| React |
-| ----- |
-
-| [![Material Tailwind Kit React](https://s3.amazonaws.com/creativetim_bucket/products/486/thumb/material-tailwind-kit-react.jpg)](http://demos.creative-tim.com/material-tailwind-kit-react/#/?ref=readme-mtkr)
-
-## Demo
-
-- [Home page](https://demos.creative-tim.com/material-tailwind-kit-react/#/home?ref=readme-mtkr)
-- [Profile page](https://demos.creative-tim.com/material-tailwind-kit-react/#/profile?ref=readme-mtkr)
-- [Sign in page](https://demos.creative-tim.com/material-tailwind-kit-react/#/sign-in?ref=readme-mtkr)
-- [Sign up page](https://demos.creative-tim.com/material-tailwind-kit-react/#/sign-up?ref=readme-mtkr)
-
-[View More](https://demos.creative-tim.com/material-tailwind-kit-react/#/?ref=readme-mtkr).
-
-## Quick start
-
-Quick start options:
-
-- Downdload from [Creative Tim](https://www.creative-tim.com/product/material-tailwind-kit-react?ref=readme-mtkr).
-
-## Terminal Commands
-
-1. Download and Install NodeJs LTS version from [NodeJs Official Page](https://nodejs.org/en/download/).
-2. Navigate to the root ./ directory of the product and run `npm install` or `yarn install` or `pnpm install` to install our local dependencies.
+- Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
+- Edit your frontend in `packages/nextjs/pages`
+- Edit your deployment scripts in `packages/hardhat/deploy`
 
 ## Documentation
 
-The documentation for the Material Tailwind Kit React is hosted at our [website](https://material-tailwind.com/?ref=readme-mtkr).
+Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
 
-### What's included
+To know more about its features, check out our [website](https://scaffoldeth.io).
 
-Within the download you'll find the following directories and files:
+## Contributing to Scaffold-ETH 2
 
-```
-material-tailwind-kit-react
-    ├── public
-    │   ├── css
-    │   └── img
-    ├── src
-    │   ├── data
-    │   ├── pages
-    │   ├── widgets
-    │   ├── App.jsx
-    │   ├── main.jsx
-    │   └── routes.jsx
-    ├── .gitignore
-    ├── CHANGELOG.md
-    ├── index.html
-    ├── ISSUE_TEMPLATE.md
-    ├── jsconfig.json
-    ├── LICENSE
-    ├── package.json
-    ├── postcsss.config.cjs
-    ├── prettier.config.cjs
-    ├── README.md
-    ├── tailwind.config.cjs
-    └── vite.config.js
-```
+We welcome contributions to Scaffold-ETH 2!
 
-## Browser Support
-
-At present, we officially aim to support the last two versions of the following browsers:
-
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
-
-## Resources
-
-- [Live Preview](https://demos.creative-tim.com/material-tailwind-kit-react/#/home?ref=readme-mtkr)
-- [Download Page](https://www.creative-tim.com/product/material-tailwind-kit-react?ref=readme-mtkr)
-- Documentation is [here](https://material-tailwind.com/?ref=readme-mtkr)
-- [License Agreement](https://www.creative-tim.com/license?ref=readme-mtkr)
-- [Support](https://www.creative-tim.com/contact-us?ref=readme-mtkr)
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/material-tailwind-kit-react/issues)
-- [Nepcha Analytics](https://nepcha.com?ref=readme) - Analytics tool for your website
-
-## Reporting Issues
-
-We use GitHub Issues as the official bug tracker for the Material Tailwind Kit React. Here are some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the Material Tailwind Kit React. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/material-tailwind-kit-react?ref=readme-mtkr).
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
-
-## Technical Support or Questions
-
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us?ref=readme-mtkr) instead of opening an issue.
-
-## Licensing
-
-- Copyright 2023 [Creative Tim](https://www.creative-tim.com?ref=readme-mtkr)
-- Creative Tim [license](https://www.creative-tim.com/license?ref=readme-mtkr)
-
-## Useful Links
-
-- [More products](https://www.creative-tim.com/templates?ref=readme-mtkr) from Creative Tim
-
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-mtkr) from Creative Tim
-
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=readme-mtkr) (earn money)
-
-##### Social Media
-
-Twitter: <https://twitter.com/CreativeTim>
-
-Facebook: <https://www.facebook.com/CreativeTim>
-
-Dribbble: <https://dribbble.com/creativetim>
-
-Google+: <https://plus.google.com/+CreativetimPage>
-
-Instagram: <https://instagram.com/creativetimofficial>
+Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
